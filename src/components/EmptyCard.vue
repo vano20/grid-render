@@ -1,9 +1,9 @@
 <template>
-  <v-card height="100%">
+  <v-card :class="emptyTitle" height="100%">
     <v-card-title>
       {{ title }}
     </v-card-title>
-    <v-card-text>
+    <v-card-text v-if="title">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
       veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
@@ -19,5 +19,15 @@ export default {
   props: {
     title: String,
   },
+  computed: {
+    emptyTitle() {
+      return !this.title ? 'invisible-card' : ''
+    },
+  },
 }
 </script>
+<style>
+.invisible-card {
+  box-shadow: none !important;
+}
+</style>
