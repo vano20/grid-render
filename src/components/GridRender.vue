@@ -7,64 +7,12 @@
 </template>
 <script>
 import RowCol from './RowCol.vue'
+import dataset from '../data/dataset'
 export default {
   components: { RowCol },
   name: 'GridRender',
   data: () => ({
-    dataObject: {
-      data: {
-        rows: [
-          {
-            order: 1,
-            defaultWide: 12,
-            child: [
-              {
-                order: 1,
-                content: 'row 1 col 1',
-                defaultWide: 12,
-              },
-              {
-                order: 2,
-                content: 'row 1 col 2',
-                defaultWide: 12,
-              },
-            ],
-          },
-          {
-            order: 2,
-            defaultWide: 12,
-            child: [
-              {
-                order: 1,
-                content: 'row 2 col 1',
-                defaultWide: 6,
-              },
-              {
-                order: 2,
-                defaultWide: 6,
-                child: [
-                  {
-                    order: 1,
-                    content: 'row 2.2 col 1',
-                    defaultWide: 12,
-                  },
-                  {
-                    order: 2,
-                    content: 'row 2.2 col 2',
-                    defaultWide: 12,
-                  },
-                  {
-                    order: 3,
-                    content: 'row 2.2 col 3',
-                    defaultWide: 12,
-                  },
-                ],
-              },
-            ],
-          },
-        ],
-      },
-    },
+    dataObject: dataset,
   }),
   computed: {
     dataRows() {
